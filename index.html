@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>ISA - Fault diagnostic and classification AI system</title>
+</head>
+<body>
+    <div onmouseover="show_team()" id="top_page"> 
+        <p>DS4A <strong>Team 37</strong> - Fault diagnostics and classification AI system</p> 
+        
+    </div>
+    <div id="team_names"> 
+        <ul style="margin-left: 15px;">
+            Integrantes:
+            <li>Pablo Tamayo</li>
+            <li>Andres Ortiz</li>
+            <li>Carolina Sanchez</li>
+            <li>Carlos Saenz</li>
+            <li>Carlos Uribe</li>
+            <li>Sebastian Arango</li>
+
+        
+        </ul>
+    </div>
+    <div onmouseover="hide_team()">
+        <div id = "error">
+            <a name = "bandera"></a>
+            <div id="lberror">
+
+            </div>
+        </div>
+        <div class="fila" id="header">
+            <div class="col30 center">
+                <img src="img/ISA.jpg" width="200" height="100">
+            </div>
+            <div class="col70 center">
+                <h1 class="pd-20" id="steps">PASO 1. SELECCIONAR LOS ARCHIVOS COMTRADE</h1>
+            </div>
+
+        </div>
+        <div id="paso1"> 
+            <div class="fila pd-20">
+                <div class="col50 mt-20">
+                    <label for="name">Select COMTRADE cfg file:</label>
+                    <br>
+                    <input type="text" id="comtrade_cfg" name="name" accept=".cfg" value="Select one cfg file." disabled>
+                    <br>
+                    <input type="file" id="myFile_cfg" multiple size="50" onchange="upload_function()">
+                </div>
+                <div class="col50 mt-20 ">
+                    <label for="name">Select COMTRADE dat file:</label>
+                    <br>
+                    <input type="text" id="comtrade_dat" name="name" accept=".dat" value="Select one dat file." disabled>
+                    <br>
+                    <input type="file" id="myFile_dat" multiple size="50" onchange="upload_function()">
+                </div>
+
+            </div>
+            <div class="fila mt-20">
+                <div class="col100" style="text-align: center;">
+                    <button id="paso1_button" onclick="click_paso1()" style="font-size: 20px;">Load</button>
+                </div>
+
+        
+            </div>
+
+        </div>
+        <div id="paso2">
+            
+            <div class="fila">
+                <div class="col30" style="padding-top: 17%;">
+                    <h3 class="pd-20"> Loaded files:</h3>
+                    <p id="loaded_files"> </p>
+                </div>
+                <div class="col70">
+                    <div class="fila" style="border-color: dodgerblue;border-style: groove; margin: 5px;padding: 10px;">
+                        <div class="col100 center">
+                            <h3>Select signals to analyze </h3>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="TRFH_A" value="TRFH_A">TRFH_A</label>
+                            
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="OUL_HA-CTH_OA" value="OUL_HA-CTH_OA">OUL_HA-CTH_OA</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="TRFH_B" value="TRFH_B">TRFH_B</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="OUL_HB-CTH_OB" value="OUL_HB-CTH_OB">OUL_HB-CTH_OB</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="TRFH_C" value="TRFH_C">TRFH_C</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="OUL_HC-CTH_OC" value="OUL_HC-CTH_OC">OUL_HC-CTH_OC</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="TRFL_A" value="TRFL_A">TRFL_A</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTL_IA-CTL_OA" value="CTL_IA-CTL_OA">CTL_IA-CTL_OA</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="TRFL_B" value="TRFL_B">TRFL_B</label>
+
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTL_IB-TL_OB" value="CTL_IB-TL_OB">CTL_IB-TL_OB</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="TRFL_C" value="TRFL_C">TRFL_C</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTL_IC-CTL_OC" value="CTL_IC-CTL_OC">CTL_IC-CTL_OC</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTD_IA" value="CTD_IA">CTD_IA</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTD_IA-CTD_OA" value="CTD_IA-CTD_OA">CTD_IA-CTD_OA</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTD_IB" value="CTD_IB">CTD_IB</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTD_IB-CTD_OB" value="CTD_IB-CTD_OB">CTD_IB-CTD_OB</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTD_IC" value="CTD_IC">CTD_IC</label>
+                        </div>
+                        <div class="col50 mt-20">
+                            <label><input class="chp" type="checkbox" id="CTD_IC-CTD_OC" value="CTD_IC-CTD_OC">CTD_IC-CTD_OC</label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="fila">
+                <div class="col100 center">
+                    <button class="mt-20" onclick="location.reload();" id="paso2_button" style="font-size: 20px;">Load other files</button>
+                    <button class="mt-20" onclick="click_paso2()" id="paso2_button" style="font-size: 20px;">Analyze signals</button>
+
+                </div>
+
+            </div>
+            
+            <div id="but_p2">
+                
+            </div>
+    
+        </div>
+        <div id="paso3">
+            <div class="fila">
+                <div class="col30">
+                    <h3 class="pd-20"> Loaded files:</h3>
+                    <p id="loaded_files_3"> </p>
+
+                </div>
+                <div class="col70 mt-20">
+                    <div class="filas">
+                        <div class="col100">
+                            <div style="border-style: solid; width: 100%; height:300px;">
+
+                            </div>
+                            
+                        </div>
+                        <div class="col100">
+                            <h3 class="pd-20">Selected signals:</h3>
+                            <div id="signals"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col100 center">
+                    <button class="b_p3 mt-20" onclick="location.reload();" style="font-size: 20px;"> Select diferents files </button>
+                    <button class= "b_p3 mt-20" onclick="hide_3();" style="font-size: 20px;"> Analyze other signals</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="0" id="cont_signal">
+    <script src="script.js">
+    </script>
+</body>
+</html>

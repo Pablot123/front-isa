@@ -1,0 +1,142 @@
+body{
+    margin: 0;
+}
+#header{
+    width: 100%;
+}
+.col50{
+    flex: 50%;
+    
+}
+.col70{
+    
+    flex: 70%;
+    
+}
+.col100{
+    flex: 100%;
+    
+}
+.center{
+    text-align: center;
+}
+.col30{
+    flex: 30%;
+}
+.fila{
+    display:flex;
+    flex-wrap: wrap;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.pd-20{
+    padding-left: 20px;
+}
+#paso1{
+    display: block;
+}
+#paso2{
+    display: none;
+}
+#paso3{
+    display: none;
+}
+#top_page{
+    background-color:dodgerblue;
+    padding: 2px;
+    font-size: 20px;
+}
+#top_page p{
+    color:white;
+    margin-left: 12px;
+}
+#team_names{
+    display: none;
+    background-color: steelblue;
+    width: 200px;
+    color: white;
+    border-color: white;
+    border-style: groove;
+    position: absolute;
+    top: 45px;
+    left: 75px;
+    box-shadow: gray;
+}
+#error{
+    background-color: red;
+    color: white;
+    width: 100%;
+    height: 35px;
+    padding-top: 8px;
+    padding-left: 15px;
+    font-size:medium;
+    display: none;
+}
+h1{
+    color: dodgerblue;
+}
+
+/* PARA LA PAGINA DEL PASO 1 */
+#upload_file{
+    margin: auto;
+    width: 50%;
+}
+
+#but_p1{
+    margin: auto;
+    width: 50%;
+}
+#paso1_button{
+    background-color:dodgerblue; /* Green */
+    border: none;
+    color: white;
+    width: 250px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 12px;
+    
+}
+
+/* PARA LA PAGINA DEL PASO 2 */
+#cont_p2{
+    margin: auto;
+    width: 50%;
+}
+
+#paso2_button{
+    background-color:dodgerblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 12px;
+    
+}
+#but_p2{
+    margin: auto;
+    width: 50%;
+}
+td {
+    padding: 0 15px;
+}
+
+/* PARA LA PAGINA PASO 3 */
+
+.b_p3{
+    background-color:dodgerblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 12px;
+}
